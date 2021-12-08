@@ -1,17 +1,54 @@
-import java.util.Scanner;
-public class Program {
 
-	public static void main(String[] args) 
-	{
-		Scanner in = new Scanner(System.in);
+import otry.*;
+import java.util.Scanner;
+public class Program 
+{
+static Scanner in = new Scanner(System.in);
+	public static void main(String[] args)
+        {
+            int mode; int check = 1; 
+            while (check == 1)
+            {
+               System.out.print("Выберите с каким классом вы хотите работать\n1)Лига\n2)Команда\n3)Вратари\n4)Полевые\n5)Nгры\n");
+                mode = in.nextInt();
+                if (mode == 1)
+                {
+                    func1();
+                }
+                if (mode == 2)
+                {
+                    func2();
+                }
+                if (mode == 3)
+                {
+                    func3();
+                }
+                if (mode == 4)
+                {
+                    func4();
+                }
+                if (mode == 5)
+                {
+                    func5();
+                }
+                System.out.print("Вы хотите продолжить? 1 - да, 0 - нет ");
+                check = in.nextInt();
+            }
+          
+        in.close();
+
+	}
+	
 public static void input_full_league(league a)
         {
-            string im, loc, season; int i;
+            String im, loc, season; int i;
             System.out.print("Введите название лиги\n");
-            im = in.nextLine();
+            in.nextLine();im = in.nextLine();
+			
             a.change_name(im);
             System.out.print("Введите количество команд\n");
            i=in.nextInt();
+		   in.nextLine();
             a.change_value(i);
             System.out.print("Введите сезон лиги\n");
             season = in.nextLine();
@@ -23,9 +60,9 @@ public static void input_full_league(league a)
 
         public static void input_full_team(team a)
         {
-            string im, loc; int i;
+            String im, loc; int i;
             System.out.print("Введите название команды\n");
-            im = in.nextLine();
+            in.nextLine();im = in.nextLine();
             a.change_name(im);
             System.out.print("Введите количество побед\n");
             i = in.nextInt();
@@ -43,16 +80,19 @@ public static void input_full_league(league a)
             i = in.nextInt();
             a.change_value_of_goalkeepers(i);
             System.out.print("Введите город команды\n");
-            loc = in.nextLine();
+            in.nextLine();loc = in.nextLine();
             a.change_location(loc);
         }
 
         public static void input_full_gp(goalkeeper a)
         {
-            string im, loc; int i;
+            String im, loc; int i;
             System.out.print("Введите имя вратаря\n");
-            im = in.nextLine();
+            in.nextLine();im = in.nextLine();
             a.change_name(im);
+			System.out.print("Введите количество матчей вратаря\n");
+            i = in.nextInt();
+            a.change_games(i);
             System.out.print("Введите возраст\n");
             i = in.nextInt();
             a.change_age(i);
@@ -72,7 +112,7 @@ public static void input_full_league(league a)
             i = in.nextInt();
             a.change_missed_balls(i);
             System.out.print("Введите национальность вратаря\n");
-            loc = in.nextLine();
+            in.nextLine();loc = in.nextLine();
             a.change_nation(loc);
             System.out.print("Введите вес вратаря\n");
             i = in.nextInt();
@@ -84,10 +124,12 @@ public static void input_full_league(league a)
 
         public static void input_full_fp(field_player a)
         {
-            string im, loc; int i; string pos;
+            String im, loc; int i; String pos;
             System.out.print("Введите имя полевого игрока\n");
-            im = in.nextLine();
-            a.change_name(im);
+            in.nextLine();im = in.nextLine();
+            a.change_name(im);System.out.print("Введите количество матчей полевого игрока\n");
+            i = in.nextInt();
+            a.change_games(i);
             System.out.print("Введите возраст\n");
             i = in.nextInt();
             a.change_age(i);
@@ -103,7 +145,7 @@ public static void input_full_league(league a)
             System.out.print("Введите количество желтых карточек\n");
             i = in.nextInt();
             a.change_yellow_cards(i);
-            System.out.print("Введите позицию\n");
+            System.out.print("Введите позицию\n");in.nextLine();
             pos = in.nextLine();
             a.change_position(pos);
             System.out.print("Введите национальность полевого игрока\n");
@@ -119,18 +161,18 @@ public static void input_full_league(league a)
 
         public static void input_full_game(game a)
         {
-            string im;
+            String im;
             System.out.print("Введите название лиги\n");
-            im = in.nextLine();
+            in.nextLine();im = in.nextLine();
             a.change_name(im);
             System.out.print("Введите команду - хозяев\n");
-            im = in.nextLine();
+            in.nextLine();im = in.nextLine();
             a.change_home_team(im);
             System.out.print("Введите команду - гостей\n");
-            im = in.nextLine();
+            in.nextLine();im = in.nextLine();
             a.change_visitor_team(im);
             System.out.print("Введите результат матч\n");
-            im = in.nextLine();
+            in.nextLine();im = in.nextLine();
             a.change_result(im);
         }
 
@@ -139,7 +181,7 @@ public static void input_full_league(league a)
             int check = 1;  int action; league a = new league();
             while (check == 1)
             {
-                System.out.print("Выберите, что вы хотите сделать\n1)Ввести данные лиги\n2)Изменить имя лиги\n3)Изменить количество команд\n4)Изменить сезон лиги\n5)Изменить страну лиги\n6)Вывести данные лиги\n");
+                System.out.print("Выберите, что вы хотите сделать\n1)Ввести данные лиги\n2)Nзменить имя лиги\n3)Nзменить количество команд\n4)Nзменить сезон лиги\n5)Nзменить страну лиги\n6)Вывести данные лиги\n");
                 action = in.nextInt();
                 if (action == 1)
                 {
@@ -147,9 +189,9 @@ public static void input_full_league(league a)
                 }
                 if (action == 2)
                 {
-                    string im;
+                    String im;
                     System.out.print("Введите название лиги\n");
-                    im = in.nextLine();
+                    in.nextLine();im = in.nextLine();
                     a.change_name(im);
                 }
                 if (action == 3)
@@ -161,23 +203,23 @@ public static void input_full_league(league a)
                 }
                 if (action == 4)
                 {
-                    string season;
+                    String season;
                     System.out.print("Введите сезон лиги\n");
-                    season = in.nextLine();
+                    in.nextLine();season = in.nextLine();
                     a.change_years(season);
                 }
                 if (action == 5)
                 {
-                    string loc;
+                    String loc;
                     System.out.print("Введите страну лиги\n");
-                    loc = in.nextLine();
+                    in.nextLine();loc = in.nextLine();
                     a.change_loc(loc);
                 }
                 if (action == 6)
                 {
                     a.vivod();
                 }
-                Console.ReadKey();
+              
                 System.out.print("\nВы хотите продолжить с этим классом? 1 - да, 0 - нет ");
                 check = in.nextInt();
             }
@@ -190,7 +232,7 @@ public static void input_full_league(league a)
             {
                
            
-                    System.out.print("Выберите, что вы хотите сделать\n1)Ввести данные команды\n2)Изменить название команды\n3)Изменить количество побед команды\n4)Изменить количество поражений команды\n5)Изменить количество ничьих команды\n6)Изменить количество полевых игроков\n7)Изменить количество вратарей\n8)Изменить город команды\n9)Вывести данные команды\n");
+                    System.out.print("Выберите, что вы хотите сделать\n1)Ввести данные команды\n2)Nзменить название команды\n3)Nзменить количество побед команды\n4)Nзменить количество поражений команды\n5)Nзменить количество ничьих команды\n6)Nзменить количество полевых игроков\n7)Nзменить количество вратарей\n8)Nзменить город команды\n9)Вывести данные команды\n");
                     action=in.nextInt();
                     if (action == 1)
                     {
@@ -198,9 +240,9 @@ public static void input_full_league(league a)
                     }
                     if (action == 2)
                     {
-                        string im;
+                        String im;
                         System.out.print("Введите название команды\n");
-                        im=in.nextLine();
+                        in.nextLine();im = in.nextLine();
                         a.change_name(im);
                     }
                     if (action == 3)
@@ -240,16 +282,16 @@ public static void input_full_league(league a)
                     }
                     if (action == 8)
                     {
-                        string loc;
+                        String loc;
                         System.out.print("Введите город команды\n");
-                        loc=in.nextLine();
+                        in.nextLine();loc = in.nextLine();
                         a.change_location(loc);
                     }
                     if (action == 9)
                     {
                         a.vivod();
                     }
-                Console.ReadKey();
+              
                 System.out.print("\nВы хотите продолжить с этим классом? 1 - да, 0 - нет ");
                 check = in.nextInt();
             }
@@ -261,7 +303,7 @@ public static void input_full_league(league a)
             int check = 1;  int action; goalkeeper a=new goalkeeper();
             while (check == 1)
             {
-                    System.out.print("Выберите, что вы хотите сделать\n1)Ввести  данные вратаря\n2)Изменить имя вратаря\n3)Изменить возраст вратаря\n4)Изменить количество голов вратаря\n5)Изменить количество асистов вратаря\n6)Изменить количество красных карточек\n7)Изменить количество желтых карточек\n8)Изменить количество пропущенных мячей\n9)Изменить национальность вратаря\n10)Изменить вес вратаря\n11)Изменить рост вратаря\n12)Вывести данные вратаря\n");
+                    System.out.print("Выберите, что вы хотите сделать\n1)Ввести  данные вратаря\n2)Nзменить имя вратаря\n3)Nзменить возраст вратаря\n4)Nзменить количество голов вратаря\n5)Nзменить количество асистов вратаря\n6)Nзменить количество красных карточек\n7)Nзменить количество желтых карточек\n8)Nзменить количество пропущенных мячей\n9)Nзменить национальность вратаря\n10)Nзменить вес вратаря\n11)Nзменить рост вратаря\n12)Вывести данные вратаря\n");
                 action = in.nextInt();
                 if (action == 1)
                     {
@@ -269,9 +311,9 @@ public static void input_full_league(league a)
                     }
                     if (action == 2)
                     {
-                        string im;
+                        String im;
                         System.out.print("Введите имя вратаря\n");
-                       im =in.nextLine();
+                       in.nextLine();im = in.nextLine();
                         a.change_name(im);
                     }
                     if (action == 3)
@@ -318,9 +360,9 @@ public static void input_full_league(league a)
                     }
                     if (action == 9)
                     {
-                        string loc;
+                        String loc;
                         System.out.print("Введите национальность вратаря\n");
-                        loc=in.nextLine();
+                        in.nextLine();loc = in.nextLine();
                         a.change_nation(loc);
                     }
                     if (action == 10)
@@ -341,7 +383,7 @@ public static void input_full_league(league a)
                     {
                         a.vivod();
                     }
-                Console.ReadKey();
+              
                     System.out.print("\nВы хотите продолжить с этим классом? 1 - да, 0 - нет ");
                 check = in.nextInt();
             }
@@ -355,7 +397,7 @@ public static void input_full_league(league a)
             {
                
                 
-                    System.out.print("Выберите, что вы хотите сделать\n1)Ввести  данные полевого игрока\n2)Изменить имя полевого игрока\n3)Изменить возраст полевого игрока\n4)Изменить количество голов полевого игрока\n5)Изменить количество асистов полевого игрока\n6)Изменить количество красных карточек\n7)Изменить количество желтых карточек\n8)Изменить позицию\n9)Изменить национальность полевого игрока\n10)Изменить вес полевого игрока\n11)Изменить рост полевого игрока\n12)Вывести данные полевого игрока\n");
+                    System.out.print("Выберите, что вы хотите сделать\n1)Ввести  данные полевого игрока\n2)Nзменить имя полевого игрока\n3)Nзменить возраст полевого игрока\n4)Nзменить количество голов полевого игрока\n5)Nзменить количество асистов полевого игрока\n6)Nзменить количество красных карточек\n7)Nзменить количество желтых карточек\n8)Nзменить позицию\n9)Nзменить национальность полевого игрока\n10)Nзменить вес полевого игрока\n11)Nзменить рост полевого игрока\n12)Вывести данные полевого игрока\n");
                 action = in.nextInt();
                 if (action == 1)
                     {
@@ -363,9 +405,9 @@ public static void input_full_league(league a)
                     }
                     if (action == 2)
                     {
-                        string im;
+                        String im;
                         System.out.print("Введите имя полевого игрока\n");
-                        im=in.nextLine();
+                        in.nextLine();im = in.nextLine();
                         a.change_name(im);
                     }
                     if (action == 3)
@@ -405,16 +447,16 @@ public static void input_full_league(league a)
                     }
                     if (action == 8)
                     {
-                        string pos;
-                        System.out.print("Введите позицию\n");
+                        String pos;
+                        System.out.print("Введите позицию\n");in.nextLine();
                        pos =in.nextLine();
                         a.change_position(pos);
                     }
                     if (action == 9)
                     {
-                        string loc;
+                        String loc;
                         System.out.print("Введите национальность полевого игрока\n");
-                        loc=in.nextLine();
+                        in.nextLine();loc = in.nextLine();
                         a.change_nation(loc);
                     }
                     if (action == 10)
@@ -435,7 +477,7 @@ public static void input_full_league(league a)
                     {
                         a.vivod();
                     }
-                Console.ReadKey();
+              
                     System.out.print("\nВы хотите продолжить с этим классом? 1 - да, 0 - нет ");
                 check = in.nextInt();
             }
@@ -446,7 +488,7 @@ public static void input_full_league(league a)
             int check = 1;  int action;game a=new game();
             while (check == 1)
             {
-                    System.out.print("Выберите, что вы хотите сделать\n1)Ввести данные матча\n2)Изменить название лиги\n3)Изменить команду - хозяев\n4)Изменить команду - гостей\n5)Изменить результат матча\n6)Вывести данные матча\n");
+                    System.out.print("Выберите, что вы хотите сделать\n1)Ввести данные матча\n2)Nзменить название лиги\n3)Nзменить команду - хозяев\n4)Nзменить команду - гостей\n5)Nзменить результат матча\n6)Вывести данные матча\n");
                 action = in.nextInt();
                 if (action == 1)
                     {
@@ -454,74 +496,45 @@ public static void input_full_league(league a)
                     }
                     if (action == 2)
                     {
-                        string im;
+                        String im;
                         System.out.print("Введите название лиги\n");
-                    im = in.nextLine();
+                    in.nextLine();im = in.nextLine();
                     a.change_name(im);
                     }
                     if (action == 3)
                     {
-                        string im;
+                        String im;
                         System.out.print("Введите команду - хозяев\n");
-                    im = in.nextLine();
+                    in.nextLine();im = in.nextLine();
                     a.change_home_team(im);
                     }
                     if (action == 4)
                     {
-                        string im;
+                        String im;
                         System.out.print("Введите команду - гостей\n");
-                        im=in.nextLine();
+                        in.nextLine();im = in.nextLine();
                         a.change_visitor_team(im);
                     }
                     if (action == 5)
                     {
-                        string im;
+                        String im;
                         System.out.print("Введите результат матч\n");
-                       im =in.nextLine();
+                       in.nextLine();im = in.nextLine();
                         a.change_result(im);
                     }
                     if (action == 6)
                     {
                         a.vivod();
                     }
-                Console.ReadKey();
+              
                     System.out.print("\nВы хотите продолжить с этим классом? 1 - да, 0 - нет ");
                 check = in.nextInt();
             }
         }
-        static void Main(string[] args)
-        {
-            int mode; int check = 1;
-            while (check == 1)
-            {
-               System.out.print("Выберите с каким классом вы хотите работать\n1)Лига\n2)Команда\n3)Вратари\n4)Полевые\n5)Игры\n");
-                mode = in.nextInt();
-                if (mode == 1)
-                {
-                    func1();
-                }
-                if (mode == 2)
-                {
-                    func2();
-                }
-                if (mode == 3)
-                {
-                    func3();
-                }
-                if (mode == 4)
-                {
-                    func4();
-                }
-                if (mode == 5)
-                {
-                    func5();
-                }
-                System.out.print("Вы хотите продолжить? 1 - да, 0 - нет ");
-               // check = in.nextInt();
-            }
-            Console.ReadKey();
-        in.close();
-
-	}
+	
+	
 
 }
+
+
+
