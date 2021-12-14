@@ -715,7 +715,7 @@ public static void func8()
                     int country, div;
                     System.out.print("Выберите страну:\n1)Россия\n2)Англия\n");
                     country = in.nextInt();
-                    System.out.print(a[country - 1][2].return_name()+"\n" + a[country - 1][2].return_name()+"\n" + a[country - 1][2].return_name()+"\n");
+                    System.out.print(a[country - 1][0].return_name()+"\n" + a[country - 1][1].return_name()+"\n" + a[country - 1][2].return_name()+"\n");
                 }
 
 
