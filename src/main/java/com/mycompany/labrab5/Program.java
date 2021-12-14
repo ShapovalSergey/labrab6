@@ -9,7 +9,7 @@ static Scanner in = new Scanner(System.in);
             int mode; int check = 1; 
             while (check == 1)
             {
-               System.out.print("Выберите с каким классом вы хотите работать\n1)Лига\n2)Команда\n3)Вратари\n4)Полевые\n5)Nгры\n6)Массив объектов game\n7)Обработка строк\n");
+               System.out.print("Выберите с каким классом вы хотите работать\n1)Лига\n2)Команда\n3)Вратари\n4)Полевые\n5)Nгры\n6)Массив объектов game\n7)Обработка строк\n8)Двумерный массив\n");
                 mode = in.nextInt();
                 if (mode == 1)
                 {
@@ -38,6 +38,10 @@ static Scanner in = new Scanner(System.in);
                  if (mode==7) 
                 {
                  func7();   
+                }
+                 if (mode==8) 
+                {
+                func8();    
                 }
                 System.out.print("Вы хотите продолжить? 1 - да, 0 - нет \n");
                 check = in.nextInt();
@@ -183,13 +187,11 @@ public static void input_full_league(league a)
            im = in.nextLine();
             a.change_result(im);
         }
-
-        public static void func1()
+        
+        public static void change_league(league a)
         {
-            int check = 1;  int action; league a = new league();
-            while (check == 1)
-            {
-                System.out.print("Выберите, что вы хотите сделать\n1)Ввести данные лиги\n2)Nзменить имя лиги\n3)Nзменить количество команд\n4)Nзменить сезон лиги\n5)Nзменить страну лиги\n6)Вывести данные лиги\n");
+            int action;
+         System.out.print("Выберите, что вы хотите сделать\n1)Ввести данные лиги\n2)Nзменить имя лиги\n3)Nзменить количество команд\n4)Nзменить сезон лиги\n5)Nзменить страну лиги\n6)Вывести данные лиги\n");
                 action = in.nextInt();
                 if (action == 1)
                 {
@@ -227,6 +229,14 @@ public static void input_full_league(league a)
                 {
                     a.vivod();
                 }
+        }
+
+        public static void func1()
+        {
+            int check = 1;  int action; league a = new league();
+            while (check == 1)
+            {
+                change_league(a);
               
                 System.out.print("\nВы хотите продолжить с этим классом? 1 - да, 0 - нет \n");
                 check = in.nextInt();
@@ -539,70 +549,72 @@ public static void input_full_league(league a)
                 check = in.nextInt();
             }
         }
-	public static void func6()
-        {
-            int check = 1;  int action;game[] a=new game[2];a[0]=new game();a[1]=new game();
+public static void func6()
+{
+       int check = 1; int action; game[] a = new game[2];a[0] = new game(); a[1] = new game();
             while (check == 1)
             {
-                  System.out.print("Выберите, что вы хотите сделать\n1)Ввести данные матчей\n2)Изменить название лиги\n3)Изменить команду - хозяев\n4)Изменить команду - гостей\n5)Изменить результат матча\n6)Вывести данные матчей\n");
-             action= in.nextInt();;
-            if (action == 1)
-            {
-               String im;
-               
-                    input_full_game(a[0]);input_full_game(a[1]);
-                
-            }
+                 System.out.print("Выберите, что вы хотите сделать\n1)Ввести данные матча\n2)Изменить название лиги\n3)Изменить команду - хозяев\n4)Изменить команду - гостей\n5)Изменить результат матча\n6)Вывести данные матча\n");
+                action = in.nextInt();
+                if (action == 1)
+                {
+                    input_full_game(a[0]); 
+                    input_full_game(a[1]);
+                }
                 if (action == 2)
                 {
-                   String im; int n;
-                   System.out.print("Введите номер элемента \n");
-                    n= in.nextInt();
-                   System.out.print("Введите название лиги\n");
+                    String im;int i;
+                     System.out.print("Введите номер матча\n");
+                    i =  in.nextInt();
+                     System.out.print("Введите название лиги\n");
                    in.nextLine();im = in.nextLine();
-                    a[n-1].change_name(im);
+                    a[i-1].change_name(im);
                 }
                 if (action == 3)
                 {
-                   String im; int n;
-                   System.out.print("Введите номер элемента \n");
-                       n= in.nextInt();
-                   System.out.print("Введите команду - хозяев\n");
-                                        in.nextLine();im = in.nextLine();
-                    a[n-1].change_home_team(im);
+                    String im; int i;
+                     System.out.print("Введите номер матча\n");
+                    i = in.nextInt();
+                     System.out.print("Введите команду - хозяев\n");
+                    in.nextLine();im = in.nextLine();
+                    a[i-1].change_home_team(im);
                 }
                 if (action == 4)
                 {
-                   String im; int n;
-                   System.out.print("Введите номер элемента \n");
-                       n= in.nextInt();
-                   System.out.print("Введите команду - гостей\n");
-                    in.nextLine();im = in.nextLine();
-                    a[n-1].change_visitor_team(im);
+                    String im; int i;
+                     System.out.print("Введите номер матча\n");
+                    i = in.nextInt();
+                     System.out.print("Введите команду - гостей\n");
+                   in.nextLine();im = in.nextLine();
+                    a[i-1].change_visitor_team(im);
                 }
                 if (action == 5)
                 {
-                   String im; int n;
-                   System.out.print("Введите номер элемента \n");
-                       n= in.nextInt();
-                   System.out.print("Введите результат матч\n");
-                                      in.nextLine();im = in.nextLine();
-                    a[n-1].change_result(im);
+                    String im; int i;
+                     System.out.print("Введите номер матча\n");
+                    i = in.nextInt();
+                     System.out.print("Введите результат матч\n");
+                    in.nextLine();im = in.nextLine();
+                    a[i-1].change_result(im);
                 }
                 if (action == 6)
                 {
-                    for (int i = 0; i < 2; i++)
-                    {
-                        a[i].vivod();
-                    }
+                    int i;
+                     System.out.print("Введите номер матча\n");
+                    i = in.nextInt();
+                    a[i-1].vivod();
                 }
-                
-               System.out.print("Вы хотите продолжить с этим типом массива? 1 - да, 0 - нет \n");
-                check = in.nextInt();;
+                 System.out.print("\nВы хотите продолжить с этим классом? 1 - да, 0 - нет ");
+                check = in.nextInt();
             }
-        
-
-        }
+      
+      
+      
+      
+      
+      
+      
+}
 	
 public static void func7()
 {
@@ -610,7 +622,7 @@ public static void func7()
             while (check == 1)
             {
                   System.out.print("Выберите, что вы хотите сделать\n1)Ввести строку\n2)Изменить строку\n3)Добавить строку к строке\n4)Вывести строку\n5)Узнать длину строки\n");
-             action= in.nextInt();;
+             action= in.nextInt();
      if (action == 1)
             {
                 System.out.print("Введите строку\n");in.nextLine();
@@ -643,8 +655,77 @@ public static void func7()
     
     
  System.out.print("Вы хотите продолжить с этим пунктом? 1 - да, 0 - нет \n");
-                check = in.nextInt();;
+                check = in.nextInt();
             }
+}
+
+public static void func8()
+{
+ int check = 1; int mode;
+            while (check == 1)
+            {
+                league[][]a=new league[2][3];
+                a[0][0] = new league("РПЛ", 16, "2020-2021", "Россия");
+                a[0][1] = new league("ФНЛ", 20, "2020-2021", "Россия");
+                a[0][2] = new league("ФНЛ-2", 62, "2020-2021", "Россия");
+                a[1][0] = new league("APL", 20, "2020-2021", "Англия");
+                a[1][1] = new league("Championship", 20, "2020-2021", "Англия");
+                a[1][2] = new league("League One", 20, "2020-2021", "Англия");
+
+                System.out.print("Выберите, что вы хотите сделать\n1)Изменить лигу\n2)Вывести данные лиги\n3)Вывести лиги страны\n");
+                mode = in.nextInt();
+                if (mode == 1)
+                {
+                    int country, div;
+                    System.out.print("Выберите страну:\n1)Россия\n2)Англия\n ");
+                    country = in.nextInt();
+                    if (country == 1)
+                    {
+                        System.out.print("Выберите дивизион:\n1)РПЛ\n2)ПФЛ\n3)ПФЛ-2\n ");
+                        div = in.nextInt();
+                        change_league(a[(country - 1)][(div - 1)]);
+                    }
+                    if (country == 2)
+                    {
+                        System.out.print("Выберите дивизион:\n1)APL\n2)Championship\n3)League One\n");
+                        div = in.nextInt();
+                        change_league( a[country - 1][div - 1]);
+                    }
+                }
+                if (mode == 2)
+                {
+                    int country, div;
+                    System.out.print("Выберите страну:\n1)Россия\n2)Англия\n ");
+                    country = in.nextInt();
+                    if (country == 1)
+                    {
+                        System.out.print("Выберите дивизион:\n1)РПЛ\n2)ПФЛ\n3)ПФЛ-2\n");
+                        div = in.nextInt();
+                        a[country - 1][div - 1].vivod();
+                    }
+                    if (country == 2)
+                    {
+                        System.out.print("Выберите дивизион:\n1)APL\n2)Championship\n3)League One\n");
+                        div = in.nextInt();
+                        a[country - 1][div - 1].vivod();
+                    }
+                }
+                if (mode == 3)
+                {
+                    int country, div;
+                    System.out.print("Выберите страну:\n1)Россия\n2)Англия\n");
+                    country = in.nextInt();
+                    System.out.print(a[country - 1][2].return_name()+"\n" + a[country - 1][2].return_name()+"\n" + a[country - 1][2].return_name()+"\n");
+                }
+
+
+
+
+
+                System.out.print("Вы хотите продолжить с этим пунктом? 1 - да, 0 - нет \n");
+                check = in.nextInt();
+            }
+
 }
 }
 
