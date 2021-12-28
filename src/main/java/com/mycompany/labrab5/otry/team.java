@@ -1,6 +1,7 @@
 package otry;
 public class team 
 {
+        private static int n =0;
         private vozvrat voz;
 	private String name;
 	private int wins;
@@ -10,7 +11,7 @@ public class team
 	private int value_of_goalkeepers;
 	private String location;
 	//////////////////////////func
-	public team() { }
+	public team() {n++; }
 	public team(String name1, int wins1, int defeats1, int draws1, int val_of_fp, int val_of_gk, String location1) 
 {
 
@@ -21,7 +22,9 @@ public class team
 	value_of_field_players = val_of_fp;
 	value_of_goalkeepers = val_of_gk;
 		location = location1;
+                n++;
 	}
+        public static int ReturnN(){return n;}
  public void change_name(String name1)
 {
 		name = name1;
