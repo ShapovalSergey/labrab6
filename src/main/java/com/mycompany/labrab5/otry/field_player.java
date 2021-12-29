@@ -1,5 +1,6 @@
 package otry;
 public class field_player {
+    static int Disq=4;
 	private String name;
 	private int age;
 	private int games;
@@ -13,7 +14,7 @@ public class field_player {
 	private int height;
 
 	//////////////////////////func
-
+        public static int RetDisq(){return Disq;}
 	public field_player() { }
 	public field_player(String name1, int age1, int games1, int goals1, int assists1, int red1, int yellow1, String position1, String nation1, int weig1, int heig1)
 	{
