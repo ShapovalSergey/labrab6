@@ -24,6 +24,7 @@ public class team
 		location = location1;
                 n++;
 	}
+        public team(String name1) {name = name1;n++; }
         public static int ReturnN(){return n;}
  public void change_name(String name1)
 {

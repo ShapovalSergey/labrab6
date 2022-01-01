@@ -13,6 +13,7 @@ public class game {
 		visitor_team = vis;
 		result = rez;
 	}
+        public game(String name) {league_name = name; }
 	public void change_name(String name1)
 	{
 		league_name = name1;

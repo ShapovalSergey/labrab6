@@ -47,6 +47,10 @@ static Scanner in = new Scanner(System.in);
                 {
                 func9();    
                 }
+                   if (mode==10) 
+                {
+                func10();    
+                }
                 System.out.print("Вы хотите продолжить? 1 - да, 0 - нет \n");
                 check = in.nextInt();
             }
@@ -744,7 +748,19 @@ public static void func9()
 {
 System.out.print("Количество команд = "+team.ReturnN()+"\n");
 };
+        public static void func10()
+        {
+            team a=new team(); team x=new team("Зенит"); team y = new team("Локомотив");
+            team b = new team("Спартак");
+            team c = new team("Динамо", 10, 9, 1, 17, 3, "Москва");
+            team []d = new team [2];d[0] = x;d[1] = y;
 
+            System.out.print("\nКонструктор команды без параметров: "); a.vivod();
+            System.out.print("\nКонструктор команды с одним параметром: "); b.vivod();
+            System.out.print("\nКонструктор команды со всеми параметрами: "); c.vivod();
+            System.out.print("\nМассив инициализированный конструктором с одним параметром: "); d[0].vivod(); System.out.print("\n"); d[1].vivod();
+            System.out.print("\n");
+        }
 
 
 

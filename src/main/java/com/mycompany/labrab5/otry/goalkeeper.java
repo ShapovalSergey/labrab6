@@ -29,6 +29,7 @@ public class goalkeeper {
 		weight = weig1;
 		height = heig1;
 	}
+        public goalkeeper(String name1) { name = name1;}
 	public void change_name(String name1)
 	{
 		name = name1;

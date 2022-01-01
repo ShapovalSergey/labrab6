@@ -17,6 +17,7 @@ public league(String name1, int value_of_teams1, String  years1, String location
 	years = years1;
 	location = location1;
 }
+public league(String name1) {name = name1; }
 public void change_name(String name1)
 {
 name = name1;

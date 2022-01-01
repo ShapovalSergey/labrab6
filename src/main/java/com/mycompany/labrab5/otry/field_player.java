@@ -30,6 +30,7 @@ public class field_player {
 		weight = weig1;
 		height = heig1;
 	}
+        public field_player(String name1) {name = name1; }
 	public void change_name(String name1)
 	{
 		name = name1;
