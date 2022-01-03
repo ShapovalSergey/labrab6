@@ -61,7 +61,31 @@ public class team
 	public int return_value_of_field_players() { return voz.return_Int(this.value_of_field_players); }
 	public int return_value_of_goalkeepers() { return voz.return_Int(this.value_of_goalkeepers); }
 	public String return_location() { return location; }
- public void vivod() { System.out.println( name + " " + defeats+" "+ wins+" "+ draws+" "+ value_of_field_players+" "+ value_of_goalkeepers+" "+ location+"\n"); }
+ public void vivod() { System.out.println( name + " " + defeats+" "+ wins+" "+ draws+" "+ value_of_field_players+" "+ value_of_goalkeepers+" "+ location+"\n"+"Количество очков = "+Stat()); }
+public int Stat()
+		{
+			int points;
+            try
+            {
+				if ((wins < 0) || (draws < 0))
+				{
+					throw new Exception("Не удается получить корректный результат");
+				}
+                else
+                {
+					points = wins * 3 + draws;
+                }
+				
+			}
+            catch (Exception e)
+            {
+
+				System.out.println("Error: "+e);
+				points = 2147483647;
+			}
+			
+			
+			return points; }
 }
 class vozvrat
 {
