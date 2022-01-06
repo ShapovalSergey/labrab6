@@ -1,5 +1,6 @@
 package otry;
-public class field_player {
+public class field_player extends player
+{
     static int Disq=4;
 	private String name;
 	private int age;
@@ -18,9 +19,7 @@ public class field_player {
 	public field_player() { }
 	public field_player(String name1, int age1, int games1, int goals1, int assists1, int red1, int yellow1, String position1, String nation1, int weig1, int heig1)
 	{
-		name = name1;
-		nation = nation1;
-		age = age1;
+                new player(name1,age1,nation1);
 		games = games1;
 		goals = goals1;
 		assists = assists1;
@@ -30,18 +29,12 @@ public class field_player {
 		weight = weig1;
 		height = heig1;
 	}
-        public field_player(String name1) {name = name1; }
-	public void change_name(String name1)
-	{
-		name = name1;
-	}
+        public void change_name(String name1) { super.change_name(name1); }
+	public void change_nation(String nation1) { nation = nation1; }
+        public field_player(String name1) {change_name (name1); }
 	public void change_position(String position1)
 	{
 		position = position1;
-	}
-	public void change_nation(String nation1)
-	{
-		nation = nation1;
 	}
 	public void change_games(int games1)
 	{
@@ -50,10 +43,6 @@ public class field_player {
 	public void change_goals(int goals1)
 	{
 		goals = goals1;
-	}
-	public void change_age(int age1)
-	{
-		age = age1;
 	}
 	public void change_red_cards(int red_cards1)
 	{
@@ -75,9 +64,6 @@ public class field_player {
 	{
 		assists = assists1;
 	}
-	public String return_name() { return name; }
-	public String return_nation() { return nation; }
-	public int return_age() { return age; }
 	public int return_games() { return games; }
 	public int return_goals() { return goals; }
 	public int return_assists() { return assists; }
@@ -87,6 +73,6 @@ public class field_player {
 	public int return_weight() { return weight; }
 	public int return_height() { return height; }
 	//~field_player();
-	public void vivod() { System.out.println( name+" "+ nation+" "+ age+" "+ games+" "+ goals+" "+ assists+" "+ red_cards+" "+ yellow_cards+" "+ position+" "+ weight+" "+ height+"\n"); }
+	public void vivod() { System.out.println( return_name()+" "+ return_nation()+" "+ return_age()+" "+ games+" "+ goals+" "+ assists+" "+ red_cards+" "+ yellow_cards+" "+ position+" "+ weight+" "+ height+"\n"); }
 
 }

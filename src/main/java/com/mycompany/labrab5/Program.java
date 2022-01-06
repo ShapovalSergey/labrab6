@@ -407,7 +407,7 @@ public static void input_full_league(league a)
                     }
                     if (action == 12)
                     {
-                        a.vivod();
+                        System.out.print(a);
                     }
               
                     System.out.print("\nВы хотите продолжить с этим классом? 1 - да, 0 - нет \n");
