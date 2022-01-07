@@ -29,6 +29,7 @@ public class goalkeeper  extends player
 		height = heig1;
 	}
         public goalkeeper(String name1) { change_name (name1);}
+         public String ReturnPosition() { return "Вратарь"; }
 	public void change_missed_balls(int missed_balls1)
 	{
 		missed_balls = missed_balls1;

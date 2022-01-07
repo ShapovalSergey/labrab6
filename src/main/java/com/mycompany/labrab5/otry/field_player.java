@@ -69,7 +69,7 @@ public class field_player extends player
 	public int return_assists() { return assists; }
 	public int return_red_cards() { return red_cards; }
 	public int return_yellow_cards() { return yellow_cards; }
-	public String return_position() { return position; }
+	public String ReturnPosition() { return position; }
 	public int return_weight() { return weight; }
 	public int return_height() { return height; }
 	//~field_player();
