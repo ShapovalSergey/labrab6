@@ -1,5 +1,5 @@
 package otry;
-public class team 
+public class team implements ILicense
 {
         private static int n =0;
         private vozvrat voz;
@@ -86,6 +86,7 @@ public int Stat()
 			
 			
 			return points; }
+public void GetLicense() { System.out.println("Лицензия команды - 123456789"); }
 }
 class vozvrat
 {

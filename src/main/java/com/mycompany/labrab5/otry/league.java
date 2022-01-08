@@ -1,5 +1,5 @@
 package otry;
-public class league 
+public class league implements ILicense
 {	
 private String name;
 private int value_of_teams;
@@ -53,5 +53,5 @@ return location;
 //~league();
 
 public void vivod() { System.out.println( name+" "+ value_of_teams + " " + years + " " + location+"\n"); }
-
+public void GetLicense() { System.out.println("Лицензия лиги - 123"); }
 }
