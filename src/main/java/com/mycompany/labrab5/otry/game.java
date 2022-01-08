@@ -1,22 +1,23 @@
 package otry;
-public class game {
-	private String league_name;
+public class game implements Cloneable
+{
+	public league lg;
 	private String home_team;
 	private String visitor_team;
 	private String result;
 	//////////////////////////func
 	public game() { }
-	public game(String name, String rez, String vis, String home)
+	public game(league lg, String rez, String vis, String home)
 	{
-		league_name = name;
+		this.lg=lg;
 		home_team = home;
 		visitor_team = vis;
 		result = rez;
 	}
-        public game(String name) {league_name = name; }
+        public game(String rez) {result = rez; }
 	public void change_name(String name1)
 	{
-		league_name = name1;
+		lg.change_name(name1);
 	}
 	public void change_home_team(String home_team1)
 	{
@@ -30,9 +31,11 @@ public class game {
 	{
 		result = result1;
 	}
-	public String return_name() { return league_name; }
+	public String return_name() { return lg.return_name(); }
 	public String return_home_team() { return home_team; }
 	public String return_visitor_team() { return visitor_team; }
 	public String return_result() { return result; }
-	public void vivod() { System.out.println(league_name + " " + home_team + " " + result + " " + visitor_team + "\n"); }
+	public void vivod() { System.out.println(lg.return_name() + " " + home_team + " " + result + " " + visitor_team + "\n"); }
+        //public game clone() throws CloneNotSupportedException {return (game) super.clone();}
+        public game clone() throws CloneNotSupportedException  { return new game(new league(lg.return_name()), return_result(),return_visitor_team(), return_home_team());}
 }

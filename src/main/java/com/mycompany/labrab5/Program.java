@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Program 
 {
 static Scanner in = new Scanner(System.in);
-	public static void main(String[] args)
+	public static void main(String[] args)throws CloneNotSupportedException
         {
             int mode; int check = 1; 
             while (check == 1)
@@ -535,12 +535,12 @@ public static void input_full_league(league a)
             }
         }
 
-        public static void func5()
+        public static void func5() throws CloneNotSupportedException
         {
             int check = 1;  int action;game a=new game();
             while (check == 1)
             {
-                    System.out.print("Выберите, что вы хотите сделать\n1)Ввести данные матча\n2)Nзменить название лиги\n3)Nзменить команду - хозяев\n4)Nзменить команду - гостей\n5)Nзменить результат матча\n6)Вывести данные матча\n");
+                    System.out.print("Выберите, что вы хотите сделать\n1)Ввести данные матча\n2)Nзменить название лиги\n3)Nзменить команду - хозяев\n4)Nзменить команду - гостей\n5)Nзменить результат матча\n6)Вывести данные матча\n7)Клонирование\n");
                 action = in.nextInt();
                 if (action == 1)
                     {
@@ -578,11 +578,20 @@ public static void input_full_league(league a)
                     {
                         a.vivod();
                     }
+                      if (action == 7)
+                    {
+                    game g1 = new game(new league("RPL"),"0-0","Dynamo","Spartak");
+                    game a1=g1.clone();
+                    g1.vivod();
+                    a1.lg.change_name("PFL");
+                    g1.vivod();
+                }
+                    }
               
                     System.out.print("\nВы хотите продолжить с этим классом? 1 - да, 0 - нет \n");
                 check = in.nextInt();
             }
-        }
+        
 public static void func6()
 {
        int check = 1; int action; game[] a = new game[2];a[0] = new game(); a[1] = new game();
@@ -638,6 +647,7 @@ public static void func6()
                     i = in.nextInt();
                     a[i-1].vivod();
                 }
+                
                  System.out.print("\nВы хотите продолжить с этим классом? 1 - да, 0 - нет ");
                 check = in.nextInt();
             }
